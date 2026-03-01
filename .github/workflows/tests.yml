@@ -5,9 +5,12 @@ on:
     branches: [main]
     paths:
       - "Formula/**"
+      - ".github/workflows/**"
   pull_request:
     paths:
       - "Formula/**"
+      - ".github/workflows/**"
+  workflow_dispatch: {}
 
 jobs:
   audit:
