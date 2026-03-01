@@ -5,30 +5,30 @@
 class AuxotWorker < Formula
   desc "GPU inference worker for the Auxot platform"
   homepage "https://github.com/auxothq/auxot"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/auxothq/auxot/releases/download/v#{version}/auxot_#{version}_darwin_arm64.tar.gz"
-      sha256 "PLACEHOLDER_DARWIN_ARM64"
+      sha256 "5da6b94328033c383d764c16318b9aff1b4f7eb145e5577c6919f5bf7683b5ab"
     end
 
     on_intel do
       url "https://github.com/auxothq/auxot/releases/download/v#{version}/auxot_#{version}_darwin_amd64.tar.gz"
-      sha256 "PLACEHOLDER_DARWIN_AMD64"
+      sha256 "5fc0ebd45a44c4898afea98e7d7fe6ffb7158a99230341d7cb05b758838ff33f"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/auxothq/auxot/releases/download/v#{version}/auxot_#{version}_linux_arm64.tar.gz"
-      sha256 "PLACEHOLDER_LINUX_ARM64"
+      sha256 "2f9b4a9691658caeb14f67b3471f4e475c6612d07c115eae2221a1f1bba2cb03"
     end
 
     on_intel do
       url "https://github.com/auxothq/auxot/releases/download/v#{version}/auxot_#{version}_linux_amd64.tar.gz"
-      sha256 "PLACEHOLDER_LINUX_AMD64"
+      sha256 "f5d43573bd8d04e5970f6c20913674e9cc95b0bb3aa3df272f60324fa12d5792"
     end
   end
 
