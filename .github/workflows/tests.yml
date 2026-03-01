@@ -18,8 +18,10 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Tap this repo
-        run: brew tap auxothq/tap "$(pwd)"
+      - name: Tap from GitHub then overlay checked-out formula
+        run: |
+          brew tap auxothq/tap https://github.com/auxothq/homebrew-tap
+          cp Formula/auxot-worker.rb "$(brew --repo auxothq/tap)/Formula/auxot-worker.rb"
 
       - name: Audit formula structure
         run: |
@@ -28,4 +30,4 @@ jobs:
           brew audit --except-cops FormulaAudit/Stable auxothq/tap/auxot-worker || true
 
       - name: Style check
-        run: brew style --except-cops FormulaAudit/Stable Formula/auxot-worker.rb || true
+        run: brew style --except-cops FormulaAudit/Stable "$(brew --repo auxothq/tap)/Formula/auxot-worker.rb" || true
