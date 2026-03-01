@@ -21,11 +21,8 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Tap from GitHub then overlay checked-out formula
-        run: |
-          brew tap auxothq/tap https://github.com/auxothq/homebrew-tap
-          cp Formula/auxot-worker.rb "$(brew --repo auxothq/tap)/Formula/auxot-worker.rb"
-
+      # setup-homebrew already taps this repo when running in tap CI.
+      # Just run audit and style directly against the formula.
       - name: Audit formula structure
         run: |
           # SHA256 placeholders fail the fetch check; --except-cops skips that.
@@ -33,4 +30,4 @@ jobs:
           brew audit --except-cops FormulaAudit/Stable auxothq/tap/auxot-worker || true
 
       - name: Style check
-        run: brew style --except-cops FormulaAudit/Stable "$(brew --repo auxothq/tap)/Formula/auxot-worker.rb" || true
+        run: brew style --except-cops FormulaAudit/Stable Formula/auxot-worker.rb || true
