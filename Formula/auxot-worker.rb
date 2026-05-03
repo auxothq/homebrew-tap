@@ -11,7 +11,7 @@ class AuxotWorker < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/auxothq/auxot-server/releases/download/v0.1.35/auxot_0.1.35_darwin_amd64.tar.gz"
-      sha256 "bbaf09eb77d36d31203b7d3ba1bdc82772e6d5da14a3c88e7391d84517898c15"
+      sha256 "7123d837abb1fda79edd33d8ccf001f1a0fdc92bec60a74e86353f976bea04e2"
 
       define_method(:install) do
         bin.install "auxot-worker"
@@ -19,7 +19,7 @@ class AuxotWorker < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/auxothq/auxot-server/releases/download/v0.1.35/auxot_0.1.35_darwin_arm64.tar.gz"
-      sha256 "954b52a869f458c6cfbaaaf805019044f94d984f196a76b11aa7d95054fe421f"
+      sha256 "cb6e5e10ee414713c4e72625a766e6ad47502a28dc926e48576fdbe6876d92a2"
 
       define_method(:install) do
         bin.install "auxot-worker"
@@ -30,14 +30,14 @@ class AuxotWorker < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/auxothq/auxot-server/releases/download/v0.1.35/auxot_0.1.35_linux_amd64.tar.gz"
-      sha256 "2f25f0d3e51c740333cdb8df7a331f5999b56b35fd3dd6516f517a82f8f015ed"
+      sha256 "c8fefd46a7c7c35e34958acf78ddfbb18d8fdb9e35eb01ca0b5d17cbd06c9e3f"
       define_method(:install) do
         bin.install "auxot-worker"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/auxothq/auxot-server/releases/download/v0.1.35/auxot_0.1.35_linux_arm64.tar.gz"
-      sha256 "aec682ca805d7ea00627c2efc23585cb1c854f073c439eb8bcc361f04cd5808c"
+      sha256 "c3256d910de70d05d073bf38387f9dd3b214e1363e53b541fb234ea5cb722a78"
       define_method(:install) do
         bin.install "auxot-worker"
       end
