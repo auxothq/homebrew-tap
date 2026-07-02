@@ -5,21 +5,21 @@
 class AuxotWorker < Formula
   desc "GPU inference worker for the Auxot platform"
   homepage "https://github.com/auxothq/auxot-server"
-  version "0.1.44"
+  version "0.1.43"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/auxothq/auxot-server/releases/download/v0.1.44/auxot_0.1.44_darwin_amd64.tar.gz"
-      sha256 "7f99c91c4ba09b780452ef4167dbb16e2e661ff910b079bbe214ca375af19c03"
+      url "https://github.com/auxothq/auxot-server/releases/download/v0.1.43/auxot_0.1.43_darwin_amd64.tar.gz"
+      sha256 "f4b2ca9f3a99476c8b191df8d3795776945b5116f64c52f28deb6e11ee0be97d"
 
       define_method(:install) do
         bin.install "auxot-worker"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/auxothq/auxot-server/releases/download/v0.1.44/auxot_0.1.44_darwin_arm64.tar.gz"
-      sha256 "ab574f2e3ff9e86c6d216a6b2e139ff4ea33be2997372863c204cc3e2b9f98cf"
+      url "https://github.com/auxothq/auxot-server/releases/download/v0.1.43/auxot_0.1.43_darwin_arm64.tar.gz"
+      sha256 "8868fd735f19ced59a2100f406b26779de84e5fa3072545a6fc3dd9a84edca19"
 
       define_method(:install) do
         bin.install "auxot-worker"
@@ -29,15 +29,15 @@ class AuxotWorker < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/auxothq/auxot-server/releases/download/v0.1.44/auxot_0.1.44_linux_amd64.tar.gz"
-      sha256 "2afde3c9852c46214e2a9a0eaf0d5957133216fd24147b5eb85c40ce66662085"
+      url "https://github.com/auxothq/auxot-server/releases/download/v0.1.43/auxot_0.1.43_linux_amd64.tar.gz"
+      sha256 "ed811cf755bff6bae5fdd9033736e36923b93e30d2ff1477a24745717722b044"
       define_method(:install) do
         bin.install "auxot-worker"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/auxothq/auxot-server/releases/download/v0.1.44/auxot_0.1.44_linux_arm64.tar.gz"
-      sha256 "6fac89f016256b1b8a77ea5d873c0871a26e1e813d06368d775a48ee5444fceb"
+      url "https://github.com/auxothq/auxot-server/releases/download/v0.1.43/auxot_0.1.43_linux_arm64.tar.gz"
+      sha256 "6a49749e9e24d406761fb198ca8881f26491e93833ed8d20246213e0ba2e20c0"
       define_method(:install) do
         bin.install "auxot-worker"
       end
